@@ -11,8 +11,9 @@ Then, after checking out this repo, use `cfx run` to run Firefox with the
 add-on installed or `cfx xpi` to package the addon. After the add-on has been
 installed, content scripts that call `window.crypto.signText` should "just
 work".
+Alternatively, download and install the prepackaged xpi [here](signtextjs.xpi).
 
 TODO
 ----
-* Implement UI to pick which certificate to sign with and confirm signing
 * Use the charset from the document calling window.crypto.signText
+* Handle using certificates that require a password
