@@ -1,0 +1,15 @@
+body {
+  width: 28em;
+}
+
+textarea {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  width: 8em;
+}
