@@ -13,3 +13,9 @@ input {
 button {
   width: 8em;
 }
+
+#certDetails {
+  white-space: pre;
+  word-wrap: normal;
+  overflow-x: scroll;
+}

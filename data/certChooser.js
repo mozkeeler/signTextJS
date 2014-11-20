@@ -27,6 +27,11 @@ function displayCertDetails() {
   var certDetails = data.certs[selection.value];
   var detailsElement = document.getElementById("certDetails");
   detailsElement.textContent = "Issued to: " + certDetails.subject + "\n" +
+                               "  Serial Number: " + certDetails.serialNumber + "\n" +
+                               "  Valid from " + certDetails.notBefore + " to " +
+                                                 certDetails.notAfter + "\n" +
+                               "  Certificate Key Usage: " + certDetails.usagesString + "\n" +
+                               "  Email: " + certDetails.email + "\n" +
                                "Issued by: " + certDetails.issuer + "\n" +
                                "Stored in: " + certDetails.token;
 }
