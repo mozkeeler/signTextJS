@@ -5,5 +5,5 @@
   "description": "window.crypto.signText replacement",
   "author": "dkeeler@mozilla.com, rbarnes@mozilla.com",
   "license": "MPL 2.0",
-  "version": "0.6"
+  "version": "0.6.1"
 }
