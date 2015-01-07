@@ -21,6 +21,10 @@ for (var nickname in data.certs) {
   certNicknames.appendChild(option);
 }
 
+// If the user closes the window without clicking "OK" or "Cancel",
+// assume they wanted to cancel.
+data.cancelled = true;
+
 function displayCertDetails() {
   var selection = document.getElementById("certNicknames");
   data.selectedCert = selection.value;
@@ -44,6 +48,5 @@ function doOK() {
 }
 
 function doCancel() {
-  data.cancelled = true;
   window.close();
 }
