@@ -44,6 +44,7 @@ displayCertDetails();
 
 function doOK() {
   data.cancelled = false;
+  data.certPassword = document.getElementById("certPassword").value;
   window.close();
 }
 
