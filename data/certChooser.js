@@ -51,3 +51,13 @@ function doOK() {
 function doCancel() {
   window.close();
 }
+
+function keyboardListener(e) {
+  if (e.keyCode === 13) {
+    doOK();
+  } else if (e.keyCode === 27) {
+    doCancel();
+  }
+}
+
+document.addEventListener("keydown", keyboardListener);
