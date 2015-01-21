@@ -51,3 +51,14 @@ function doOK() {
 function doCancel() {
   window.close();
 }
+
+function keyboardListener(e) {
+  // KeyCode 13 is Enter, and keyCode 27 is Escape key.
+  if (e.keyCode === 13) {
+    doOK();
+  } else if (e.keyCode === 27) {
+    doCancel();
+  }
+}
+
+document.addEventListener("keydown", keyboardListener);
