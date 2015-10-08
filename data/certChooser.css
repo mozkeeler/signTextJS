@@ -14,11 +14,23 @@ input {
 
 button {
   width: 8em;
+  margin: 6px 0px 6px 6px;
 }
 
 select {
   max-width: 100%;
   margin-bottom: 6px;
+}
+
+.buttonBox {
+  float: right;
+}
+
+/* change buttons order on Windows only */
+@media screen and (-moz-windows-theme) {
+    #btnCancel {
+        float: right;
+    }
 }
 
 #certDetails {
