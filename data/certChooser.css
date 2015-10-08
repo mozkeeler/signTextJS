@@ -16,6 +16,11 @@ button {
   width: 8em;
 }
 
+select {
+  max-width: 100%;
+  margin-bottom: 6px;
+}
+
 #certDetails {
   white-space: pre;
   word-wrap: normal;
