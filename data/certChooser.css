@@ -28,9 +28,9 @@ select {
 
 /* change buttons order on Windows only */
 @media screen and (-moz-windows-theme) {
-    #btnCancel {
-        float: right;
-    }
+  #btnCancel {
+    float: right;
+  }
 }
 
 #certDetails {
