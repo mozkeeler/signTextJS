@@ -25,10 +25,6 @@ for (var nickname in data.certs) {
 // assume they wanted to cancel.
 data.cancelled = true;
 
-function selectPassword() {
-  setTimeout(function(){ document.getElementById("certPassword").focus(); }, 100);
-}
-
 function displayCertDetails() {
   var selection = document.getElementById("certNicknames");
   data.selectedCert = selection.value;
@@ -42,7 +38,7 @@ function displayCertDetails() {
                                "  Email: " + certDetails.email + "\n" +
                                "Issued by: " + certDetails.issuer + "\n" +
                                "Stored in: " + certDetails.token;
-  selectPassword();
+  document.getElementById("certPassword").focus();
 }
 
 displayCertDetails();
@@ -67,4 +63,4 @@ function keyboardListener(e) {
 }
 
 document.addEventListener("keydown", keyboardListener);
-selectPassword();
+setTimeout(function() { document.getElementById("certPassword").focus(); }, 100);
