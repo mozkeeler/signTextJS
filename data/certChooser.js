@@ -38,6 +38,7 @@ function displayCertDetails() {
                                "  Email: " + certDetails.email + "\n" +
                                "Issued by: " + certDetails.issuer + "\n" +
                                "Stored in: " + certDetails.token;
+  document.getElementById("certPassword").focus();
 }
 
 displayCertDetails();
@@ -62,3 +63,7 @@ function keyboardListener(e) {
 }
 
 document.addEventListener("keydown", keyboardListener);
+document.addEventListener("focus", function(event) {
+  document.getElementById("certPassword").focus();
+  event.target.removeEventListener(event.type, arguments.callee);
+});
