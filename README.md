@@ -15,5 +15,4 @@ Alternatively, download and install the prepackaged xpi [here](signtextjs.xpi).
 
 TODO
 ----
-* Use the charset from the document calling window.crypto.signText
-* Handle using certificates that require a password
+See [issues](https://github.com/mozkeeler/signTextJS/issues).
