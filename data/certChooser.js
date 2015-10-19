@@ -63,4 +63,7 @@ function keyboardListener(e) {
 }
 
 document.addEventListener("keydown", keyboardListener);
-setTimeout(function() { document.getElementById("certPassword").focus(); }, 100);
+document.addEventListener("focus", function(event) {
+  document.getElementById("certPassword").focus();
+  event.target.removeEventListener(event.type, arguments.callee);
+});
