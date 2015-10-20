@@ -9,8 +9,6 @@
 //   cancelled: to be set to true if the user cancels the dialog
 //   selectedCert: the nickname of the selected certificate
 var data = window.arguments[0];
-var headline = document.getElementById("headline");
-headline.textContent = headline.textContent.replace("<site here>", data.domain);
 var textArea = document.getElementById("text");
 textArea.textContent = data.textToSign;
 var certNicknames = document.getElementById("certNicknames");
@@ -30,14 +28,15 @@ function displayCertDetails() {
   data.selectedCert = selection.value;
   var certDetails = data.certs[selection.value];
   var detailsElement = document.getElementById("certDetails");
-  detailsElement.textContent = "Issued to: " + certDetails.subject + "\n" +
-                               "  Serial Number: " + certDetails.serialNumber + "\n" +
-                               "  Valid from " + certDetails.notBefore + " to " +
-                                                 certDetails.notAfter + "\n" +
-                               "  Certificate Key Usage: " + certDetails.usagesString + "\n" +
-                               "  Email: " + certDetails.email + "\n" +
-                               "Issued by: " + certDetails.issuer + "\n" +
-                               "Stored in: " + certDetails.token;
+  detailsElement.textContent = data.l10n["subject"] + " " + certDetails.subject + "\n" +
+                               "  " + data.l10n["serial"] + " " + certDetails.serialNumber + "\n" +
+                               "  " + data.l10n["valid_from"] + " " +
+                                      certDetails.notBefore + " " + data.l10n["to"] + " " +
+                                      certDetails.notAfter + "\n" +
+                               "  " + data.l10n["key_usage"] + " " + certDetails.usagesString + "\n" +
+                               "  " + data.l10n["email"] + " " + certDetails.email + "\n" +
+                               data.l10n["issuer"] + " " + certDetails.issuer + "\n" +
+                               data.l10n["token"] + " " + certDetails.token;
   document.getElementById("certPassword").focus();
 }
 
@@ -66,4 +65,6 @@ document.addEventListener("keydown", keyboardListener);
 document.addEventListener("focus", function(event) {
   document.getElementById("certPassword").focus();
   event.target.removeEventListener(event.type, arguments.callee);
+  var headline = document.getElementById("headline");
+  headline.textContent = headline.textContent.replace("<site here>", data.domain);
 });
