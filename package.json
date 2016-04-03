@@ -1,9 +1,10 @@
 {
   "name": "signtextjs",
   "title": "signTextJS",
-  "id": "jid1-AXn9cXcB4fD1QQ",
+  "id": "jid1-AXn9cXcB4fD1QQ@jetpack",
   "description": "window.crypto.signText replacement",
   "author": "dkeeler@mozilla.com, rbarnes@mozilla.com, vbadev@gmail.com",
   "license": "MPL 2.0",
-  "version": "0.7.4"
+  "version": "0.7.4",
+  "main": "lib/main.js"
 }

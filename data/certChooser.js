@@ -12,10 +12,10 @@ var data = window.arguments[0];
 var textArea = document.getElementById("text");
 textArea.textContent = data.textToSign;
 var certNicknames = document.getElementById("certNicknames");
-for (var nickname in data.certs) {
+for (var key in data.certs) {
   var option = document.createElement("option");
-  option.setAttribute("value", nickname);
-  option.textContent = nickname;
+  option.setAttribute("value", key);
+  option.textContent = data.certs[key].nickname;
   certNicknames.appendChild(option);
 }
 
