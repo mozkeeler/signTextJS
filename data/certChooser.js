@@ -33,7 +33,6 @@ function displayCertDetails() {
                                "  " + data.l10n["valid_from"] + " " +
                                       certDetails.notBefore + " " + data.l10n["to"] + " " +
                                       certDetails.notAfter + "\n" +
-                               "  " + data.l10n["key_usage"] + " " + certDetails.usagesString + "\n" +
                                "  " + data.l10n["email"] + " " + certDetails.email + "\n" +
                                data.l10n["issuer"] + " " + certDetails.issuer + "\n" +
                                data.l10n["token"] + " " + certDetails.token;
