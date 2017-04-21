@@ -1,21 +1,21 @@
 // data is an object with the following properties:
 //   domain: a string representing the domain that called signText
 //   textToSign: the text being signed
-//   certs: a map of nicknames to objects with the following properties:
-//     nickname: the nickname of a certificate
+//   certs: a map of dbKeys to objects with the following properties:
+//     displayName: the displayName of a certificate
 //     subject: the subject of a certificate
 //     issuer: the issuer of a certificate
 //     token: the token the certificate lives on
 //   cancelled: to be set to true if the user cancels the dialog
-//   selectedCert: the nickname of the selected certificate
+//   selectedCertDBKey: the dbKey of the selected certificate
 var data = window.arguments[0];
 var textArea = document.getElementById("text");
 textArea.textContent = data.textToSign;
 var certNicknames = document.getElementById("certNicknames");
-for (var nickname in data.certs) {
+for (var dbKey in data.certs) {
   var option = document.createElement("option");
-  option.setAttribute("value", nickname);
-  option.textContent = nickname;
+  option.setAttribute("value", dbKey);
+  option.textContent = data.certs[dbKey].displayName;
   certNicknames.appendChild(option);
 }
 
@@ -25,7 +25,7 @@ data.cancelled = true;
 
 function displayCertDetails() {
   var selection = document.getElementById("certNicknames");
-  data.selectedCert = selection.value;
+  data.selectedCertDBKey = selection.value;
   var certDetails = data.certs[selection.value];
   var detailsElement = document.getElementById("certDetails");
   detailsElement.textContent = data.l10n["subject"] + " " + certDetails.subject + "\n" +
